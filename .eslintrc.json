@@ -5,5 +5,8 @@
     "react-app/jest",
     "plugin:testing-library/react", // 리액트에서 사용할 것이다.
     "plugin:jest-dom/recommended" // 추천되는 것을 정의해준다
-  ]
+  ],
+  "rules": {
+    "no-restricted-globals": ["error", "event", "fdescribe"]
+  }
 }
