@@ -12,7 +12,6 @@ function calculateSubtotal(orderType, orderCounts) {
   for (const count of orderCounts[orderType].values()) {
     optionCount += count;
   }
-
   return optionCount * pricePerItem[orderType];
 }
 
@@ -42,10 +41,8 @@ export function OrderContextProvider(props) {
   const value = useMemo(() => {
     function updateItemCount(itemName, newItemCount, orderType) {
       const newOrderCounts = { ...orderCounts };
-
       const orderCountsMap = orderCounts[orderType];
       orderCountsMap.set(itemName, parseInt(newItemCount));
-
       setOrderCounts(newOrderCounts);
     }
     const resetOrderDatas = () => {
@@ -54,8 +51,8 @@ export function OrderContextProvider(props) {
         options: new Map(),
       });
     };
-
     return [{ ...orderCounts, totals }, updateItemCount, resetOrderDatas];
   }, [orderCounts, totals]);
+
   return <OrderContext.Provider value={value} {...props} />;
 }

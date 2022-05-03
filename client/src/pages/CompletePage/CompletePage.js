@@ -10,7 +10,7 @@ function CompletePage({ setStep }) {
   const [error, setError] = useState(false);
   useEffect(() => {
     orderCompleted(OrderDatas);
-  }, []);
+  }, [OrderDatas]);
 
   const orderCompleted = async (OrderDatas) => {
     try {

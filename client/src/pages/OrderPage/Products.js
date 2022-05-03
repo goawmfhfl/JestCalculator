@@ -3,6 +3,7 @@ import React from "react";
 function Products({ name, imagePath, updateItemCount }) {
   const handleChange = (event) => {
     const currentValue = event.target.value;
+    // updateItemCount(매개변수, 매개변수, orderType)
     updateItemCount(name, currentValue);
   };
   return (
